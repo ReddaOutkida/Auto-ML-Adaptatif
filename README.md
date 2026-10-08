@@ -9,7 +9,7 @@ Ce projet propose un système **Auto-ML adaptatif** développé dans le cadre d'
 
 Le système orchestre trois classifieurs incrémentaux en apprentissage simultané et sélectionne dynamiquement le meilleur modèle via un algorithme de bandit multi-bras $\epsilon$-greedy. L'application principale porte sur la détection d'intrusions réseau avec le dataset **UNSW-NB15**.
 
-## 🚀 Fonctionnalités Clés
+##  Fonctionnalités Clés
 
 - **Apprentissage en ligne (Streaming ML)** : Entraînement incrémental sur flux continu sans réentraînement complet.
 - **Sélection dynamique de modèles** : Algorithme Bandit multi-bras ($\epsilon$-greedy, $\epsilon=0.1$) arbitrant entre Hoeffding Tree, KNN et SGD.
@@ -18,13 +18,13 @@ Le système orchestre trois classifieurs incrémentaux en apprentissage simultan
   - API REST développée avec FastAPI exposant les métriques.
   - Tableau de bord interactif Streamlit pour le suivi en direct (latence, précision glissante, dérives, utilisation CPU/RAM).
 
-## 🧠 Modèles Incrémentaux Intégrés
+##  Modèles Incrémentaux Intégrés
 
 1. **Hoeffding Tree (HT)** : Excellente interprétabilité.
 2. **K-Nearest Neighbors (KNN)** : Capte les structures locales, excellente précision initiale.
 3. **SGD / Régression Logistique** : Latence minimale, progression constante au fil du flux.
 
-## 📁 Architecture du Projet
+##  Architecture du Projet
 
 ```text
 automl_adaptatif/
@@ -46,7 +46,7 @@ automl_adaptatif/
 └── README.md
 ```
 
-## 🛠️ Prérequis et Installation
+##  Prérequis et Installation
 
 Assurez-vous d'avoir Python 3.9+ installé.
 
@@ -59,7 +59,7 @@ cd Auto-ML-Adaptatif
 pip install -r requirements.txt
 ```
 
-## 🖥️ Lancement du Système
+##  Lancement du Système
 
 Le système est modulaire et nécessite de lancer trois terminaux séparés pour le moteur, l'API et le Dashboard.
 
@@ -78,15 +78,8 @@ uvicorn api.main:app --reload --port 8000
 streamlit run dashboard/app.py
 ```
 
-## 📊 Résultats
+##  Résultats
 Sur une évaluation de 5 000 instances :
 - Le modèle **KNN** s'est imposé comme modèle dominant avec une précision glissante de **87,66 %**.
 - Détection d'une dérive de concept vers l'instance ~1 000, gérée avec succès par une réinitialisation automatique des scores du bandit et une ré-exploration.
 
-## 👥 Auteurs
-- **Ettaoussi Nouhaila**
-- **Outkida Redda**
-- **Ouyhia Ayoub**
-- **Laiouej Anass**
-
-*Projet encadré par : Pr. TABBAA Hiba*
